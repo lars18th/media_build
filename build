@@ -547,6 +547,13 @@ if (!stat $firmware_tarball) {
 run("(cd v4l/firmware/; tar xvfj ../../$firmware_tarball)",
 		"Can't extract $firmware_tarball");
 
+print "**********************************************************\n";
+print "* Patching for blob firmwares inside modules             *\n";
+print "**********************************************************\n";
+system("(perl v4l/scripts/firmware_fw.pl \$(pwd)/v4l/firmware/)");
+system("(perl v4l/scripts/firmware_header.pl \$(pwd)/linux/drivers/ \$(pwd)/v4l/firmware/)");
+system("(perl v4l/scripts/firmware_source.pl \$(pwd)/linux/drivers/)");
+
 
 print "******************\n";
 print "* Start building *\n";
