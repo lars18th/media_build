@@ -131,7 +131,7 @@ sub process_header_file {
 
     # Determine whether to skip or process the file
     if ($total_defines == 0) {
-        print "$abs_file: skip\n";
+        #print "$abs_file: skip\n";
         return;
     } else {
         print "$abs_file: processing...\n";
