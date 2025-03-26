@@ -10,6 +10,11 @@ The solution is totally generic using three Perl scripts. You can use them for o
 For example you can compile your own modules incorporating the firmware without touching the kernel.
 You just need to apply the patches to the modules you want to compile.
 
+These three new scripts are:
+- [firmware_fw.pl](/v4l/scripts/firmware_fw.pl): for binary.fw conversion to .h
+- [firmware_header.pl](/v4l/scripts/firmware_header.pl): to patch the header files (with `#define FIRMWARE "binary.fw"`)
+- [firmware_source.pl](/v4l/scripts/firmware_source.pl): to patch the source files (with `request_firmware()` calls)
+
 Disclaimer: Remember that this may break licenses. Use it only when necessary.
 
 Enjoy!
